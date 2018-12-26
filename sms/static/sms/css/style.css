@@ -1,0 +1,50 @@
+li a {
+    color: green;
+}
+.thumbnail{
+	width: 80px; 
+	height: 80px;
+}
+body {
+    padding-bottom: 60px;
+    font-family: 'Roboto';
+    background: url('../backgroud_image.jpg')
+}
+form {
+    padding: 20px;
+}
+
+textarea{
+    max-width: 100%;
+}
+
+.exams-footer{
+	padding-top: 10px;
+}
+.footer-buttons{
+	display: inline-block;
+}
+
+.user_sec{
+    float: right;
+}
+
+.form-signin input{
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.content-wrapper-custom{
+    background-color: azure;
+}
+
+.btn-margin{
+  margin-top:10px !important;
+  margin-bottom: 5px !important;
+}

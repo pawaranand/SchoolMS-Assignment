@@ -1,0 +1,41 @@
+{% extends './base.html' %}
+{% block content %}
+<div style="text-align: center; padding-top: calc(40px + 3%)">
+	<div id="icon-grid">
+		<a href="{% url 'sms:student_attn_for_parent_list' user.parent.pk %}"class="case-wrapper" data-name="POS" data-link="pos" title="POS"> 
+			<div class="app-icon wiggle" style="background-color: #589494" title="POS">
+				<i class="octicon octicon-credit-card" title="POS" style=""></i>
+			</div> 
+			<div class="case-label ellipsis"> 
+				<div class="circle module-count-pos" data-doctype="" style="display: none;"> 
+					<span class="circle-text"></span> 
+				</div>  
+				<span class="case-label-text">View Attendance</span> 
+			</div> 
+		</a>
+		<a href="{% url 'sms:student_exams_for_parent_list' user.parent.pk %}" class="case-wrapper" data-name="POS" data-link="pos" title="POS"> 
+			<div class="app-icon wiggle" style="background-color: #FFF5A7" title="POS">
+				<i class="octicon octicon-credit-card" title="POS" style=""></i>
+			</div> 
+			<div class="case-label ellipsis"> 
+				<div class="circle module-count-pos" data-doctype="" style="display: none;"> 
+					<span class="circle-text"></span> 
+				</div>  
+				<span class="case-label-text">View Exam Result</span> 
+			</div> 
+		</a>
+		<a href="{% url 'sms:edit_parent_profile' user.parent.pk %}" class="case-wrapper" data-name="POS" data-link="pos" title="POS"> 
+			<div class="app-icon wiggle" style="background-color: #3498db" title="POS">
+				<i class="octicon octicon-person" title="POS" style=""></i>
+			</div> 
+			<div class="case-label ellipsis"> 
+				<div class="circle module-count-pos" data-doctype="" style="display: none;"> 
+					<span class="circle-text"></span> 
+				</div>  
+				<span class="case-label-text">Update Profile</span> 
+			</div> 
+		</a>
+	</div>	
+</div>
+<div style="clear: both"></div>
+{% endblock %}

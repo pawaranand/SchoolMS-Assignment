@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+	<button type="button" class="btn btn-primary">Create</button>
+	<br>
+	{% if course_student_list %}
+		<table class="table table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>#</th>
+					<th>Student</th>
+					<th>Course</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for course in course_student_list %}
+					<tr>
+						<td>{{ forloop.counter }}</td>
+						<td>{{ course.course }}</td>
+						<td>{{ course.student }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+	    <p>No links available.</p>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- 	<button type="button" class="btn btn-primary">Create</button> -->
+	<br>
+	<div class="card">
+		{% if student_attendence_list %}
+			<table class="table table-bordered">
+				<thead class="table-dark">
+					<tr>
+						<th>#</th>
+						{% if user.is_teacher %}
+							<th>Student</th>
+						{% endif %}
+						<th>Date</th>
+						<th>Status</th>
+						<th>Reason</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for attendence in student_attendence_list %}
+						<tr>
+							<td>{{ forloop.counter }}</td>
+								{% if user.is_teacher %}
+									<td>{{ attendence.student }}</td>
+								{% endif %}
+							<td>{{ attendence.attendance_date }}</td>
+							<td>{{ attendence.attendance_status }}</td>
+							<td>{{ attendence.reason_for_absentee }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% else %}
+		    <p>No attendence available.</p>
+		{% endif %}
+	</div>
+{% endblock %}

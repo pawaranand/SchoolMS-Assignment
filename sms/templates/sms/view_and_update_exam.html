@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="row mb-3">
+    <div class="card">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success btn-margin">Save changes</button>
+      </form>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+          <strong>Questions</strong>
+      </div>
+    </div>
+    <div class="list-group list-group-flush list-group-formset">
+      {% for question in questions %}
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col-10">
+              <a href="{% url 'sms:view_and_update_question' exam.pk question.pk %}">{{ question.question_text }}</a>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <div class="list-group-item text-center">
+          <p class="text-muted font-italic mb-0">You haven't created any questions yet. Go ahead and <a href="{% url 'sms:add_question_to_exam' exam.pk %}">add the first question</a>.</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="card-footer">
+      <a href="{% url 'sms:add_question_to_exam' exam.pk %}" class="btn btn-primary btn-sm btn-margin">Add question</a>
+    </div>
+  </div>
+{% endblock %}

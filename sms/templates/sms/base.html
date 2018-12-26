@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SMS</title>
+	<link rel="stylesheet" href='/static/sms/css/app_css.css'>
+	<link rel="stylesheet" href='/static/sms/css/style.css'>
+</head>
+{% block body %}
+<body>
+	<div class="main-section">
+		<div class="wrapper">
+			<header>
+			{% block navbar %}
+				{% include './navbar.html' %}
+            {% endblock %}
+			</header>
+
+            <div class="hero-and-content">
+                <div class="container">
+                {% block content %}{% endblock %}
+                </div>
+            </div>
+		</div>
+	</div>
+	{% block base_scripts %}
+	<!-- js should be loaded in body! -->
+	<script type="text/javascript"
+		src="/static/sms/js/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="/static/sms/js/bootstrap.min.js"></script>
+	{% endblock %}
+    {% block script %}{% endblock %}
+	<!-- csrf_token -->
+</body>
+{% endblock %}
+</html>
+

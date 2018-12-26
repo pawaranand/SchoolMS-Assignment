@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'sms/style.css' %}" />
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="mb-3">Add Attendance</h2>
+  <div class="card">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success btn-margin">Save</button>
+      </form>
+  </div>
+{% endblock %}

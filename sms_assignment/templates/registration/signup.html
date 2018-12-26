@@ -1,0 +1,81 @@
+{% extends 'sms/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method="post" novalidate>
+	{% csrf_token %}	
+  <div class="login-content page-card" style="margin-top: 20px;"> 
+     <form class="form-signin" method="post" novalidate="">
+  <input type="hidden" name="next" value="">      
+  <div id="div_id_username" class="form-group"> 
+    <label for="id_username" class="control-label requiredField">
+        Username
+        <span class="asteriskField">*</span> 
+    </label> 
+    <div class="controls"> 
+          <input type="text" name="username" autofocus="" id="id_username" maxlength="150" class="control-input" required=""> 
+    </div> 
+  </div> 
+ 
+  <div id="div_id_password1" class="form-group"> 
+    <label for="id_password1" class="control-label requiredField">Password
+        <span class="asteriskField">*</span> 
+    </label> 
+    <div class="controls"> 
+        <input type="password" name="password1" id="id_password1" required="" class="textinput textInput"> 
+    </div> 
+  </div> 
+  <div id="div_id_password2" class="form-group"> 
+    <label for="id_password2" class="control-label requiredField">Password confirmation
+      <span class="asteriskField">*</span> 
+    </label> 
+    <div class="controls">
+    	<input type="password" name="password2" id="id_password2" required="" class="textinput textInput"> 
+    </div> 
+  </div> 
+  <div id="div_id_user_type" class="form-group"> 
+    <label for="id_user_type_0" class="control-label requiredField">
+            User type<span class="asteriskField">*</span> 
+    </label> 
+    <div class="controls"> 
+      <label for="id_id_user_type_0_1" class="radio"> 
+        <input type="radio" name="user_type" id="id_id_user_type_0_1" value="1">Student
+      </label> 
+      <label for="id_id_user_type_0_2" class="radio"> 
+        <input type="radio" name="user_type" id="id_id_user_type_0_2" value="2">Teacher
+      </label> 
+      <label for="id_id_user_type_0_3" class="radio"> 
+        <input type="radio" name="user_type" id="id_id_user_type_0_3" value="3">Parent
+      </label> 
+    </div> 
+  </div> 
+  <div id="div_id_first_name" class="form-group"> 
+    <label for="id_first_name" class="control-label requiredField">
+            First Name<span class="asteriskField">*</span> 
+    </label> 
+    <div class=""> 
+      <input type="text" name="first_name" id="id_first_name" required="" class="textinput textInput"> 
+    </div> 
+  </div> 
+  <div id="div_id_last_name" class="form-group"> 
+    <label for="id_last_name" class="control-label requiredField">
+            Last Name<span class="asteriskField">*</span> 
+    </label> 
+    <div class="controls"> 
+      <input type="text" name="last_name" id="id_last_name" required="" class="textinput textInput"> 
+    </div> 
+  </div> 
+  <div id="div_id_email" class="form-group"> 
+    <label for="id_email" class="control-label requiredField">
+            Email<span class="asteriskField">*</span> 
+    </label> 
+    <div class="controls"> 
+      <input type="text" name="email" id="id_email" required="" class="textinput textInput"> 
+    </div> 
+  </div>
+
+        <button type="submit" class="btn btn-success">Sign up</button>
+</form>
+
+{% endblock %}

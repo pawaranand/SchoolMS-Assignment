@@ -1,0 +1,52 @@
+{% extends './base.html' %}
+{% block content %}
+<div style="text-align: center; padding-top: calc(40px + 3%)">
+	<div id="icon-grid">
+		<a href="{% url 'sms:student_attendence_list' user.student.pk %}"class="case-wrapper" data-name="POS" data-link="pos" title="POS"> 
+			<div class="app-icon wiggle" style="background-color: #589494" title="POS">
+				<i class="octicon octicon-credit-card" title="POS" style=""></i>
+			</div> 
+			<div class="case-label ellipsis"> 
+				<div class="circle module-count-pos" data-doctype="" style="display: none;"> 
+					<span class="circle-text"></span> 
+				</div>  
+				<span class="case-label-text">View Attendance</span> 
+			</div> 
+		</a>
+		<a href="{% url 'sms:student_exam_list' %}" class="case-wrapper" data-name="POS" data-link="pos" title="POS"> 
+			<div class="app-icon wiggle" style="background-color: #FFF5A7" title="POS">
+				<i class="octicon octicon-credit-card" title="POS" style=""></i>
+			</div> 
+			<div class="case-label ellipsis"> 
+				<div class="circle module-count-pos" data-doctype="" style="display: none;"> 
+					<span class="circle-text"></span> 
+				</div>  
+				<span class="case-label-text">View Exams</span> 
+			</div> 
+		</a>
+		<a href="{% url 'sms:appeared_exam_list' %}" class="case-wrapper" data-name="POS" data-link="pos" title="POS"> 
+			<div class="app-icon wiggle" style="background-color: #FF4136" title="POS">
+				<i class="octicon octicon-credit-card" title="POS" style=""></i>
+			</div> 
+			<div class="case-label ellipsis"> 
+				<div class="circle module-count-pos" data-doctype="" style="display: none;"> 
+					<span class="circle-text"></span> 
+				</div>  
+				<span class="case-label-text">Appeared Exam</span> 
+			</div> 
+		</a>
+		<a href="{% url 'sms:edit_student_profile' user.student.pk %}" class="case-wrapper" data-name="POS" data-link="pos" title="POS"> 
+			<div class="app-icon wiggle" style="background-color: #3498db" title="POS">
+				<i class="octicon octicon-person" title="POS" style=""></i>
+			</div> 
+			<div class="case-label ellipsis"> 
+				<div class="circle module-count-pos" data-doctype="" style="display: none;"> 
+					<span class="circle-text"></span> 
+				</div>  
+				<span class="case-label-text">Update Profile</span> 
+			</div> 
+		</a>
+	</div>	
+</div>
+<div style="clear: both"></div>
+{% endblock %}
