@@ -390,9 +390,9 @@ class StudentExamList(ListView):
         student = self.request.user.student
         student_courses = student.student_courses.values_list('course', flat=True)
         subjects = Subject.objects.filter(course__in=student_courses)
-        taken_quizzes = student.exam_question_logs.values_list('pk', flat=True)
+        taken_exams = student.exam_question_logs.values_list('pk', flat=True)
         queryset = Exam.objects.filter(subject__in=subjects) \
-            .exclude(pk__in=taken_quizzes) \
+            .exclude(pk__in=taken_exams) \
             .annotate(questions_count=Count('questions')) \
             .filter(questions_count__gt=0)
         return queryset

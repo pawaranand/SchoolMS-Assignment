@@ -1,11 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">My Quizzes</li>
-    </ol>
-  </nav>
   <h2 class="mb-3">My Exams</h2>
   <a href="{% url 'sms:create_exam' %}" class="btn btn-primary mb-3" role="button">Add exam</a>
   <div class="card">
