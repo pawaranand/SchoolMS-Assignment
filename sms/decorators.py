@@ -33,7 +33,7 @@ def teacher_required(function=None, redirect_field_name=REDIRECT_FIELD_NAME, log
 
 def parent_required(function=None, redirect_field_name=REDIRECT_FIELD_NAME, login_url='login'):
     '''
-    Decorator for views that checks that the logged in user is a teacher,
+    Decorator for views that checks that the logged in user is a parent,
     redirects to the log-in page if necessary.
     '''
     actual_decorator = user_passes_test(

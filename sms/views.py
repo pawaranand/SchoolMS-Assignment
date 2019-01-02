@@ -76,7 +76,6 @@ class SignUpView(CreateView):
     model = User
     form_class = SignUpForm
     template_name = 'registration/signup.html'
-    print("hgjgjh")
 
     def form_valid(self, form):
         user = form.save()
@@ -224,7 +223,7 @@ class ParentAttendenceView(generic.ListView):
 
 
 """
-    view for allocation of courses to students
+    views for allocation of courses to students
 """
 class AllocateCourseView(CreateView):
 	model = StudentCourse
@@ -275,7 +274,7 @@ class CreateExamView(CreateView):
         exam = form.save(commit=False)
         exam.created_by = self.request.user
         exam.save()
-        messages.success(self.request, 'The exam was created with success! Go ahead and add some questions now.')
+        messages.success(self.request, 'The exam was created! Go ahead and add some questions now.')
         return redirect('sms:view_and_update_exam', exam.pk)
 
 
@@ -471,6 +470,7 @@ def EvaluateExamView(request, exam_res_id):
     total_unchecked_questions = unchecked_questions.count()
     progress = 100 - round(((total_unchecked_questions - 1) / total_questions) * 100)
     question = unchecked_questions.first()
+    
     if request.method == 'POST':
         form = EvaluateExamForm(question=question, data=request.POST)
         if form.is_valid():
